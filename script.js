@@ -64,7 +64,7 @@ const destinations = [
     {
         id: 8,
         name: 'Sydney',
-        image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d4?auto=format&fit=crop&w=400&q=80',
+        image: 'https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=620,height=400,dpr=2/tour_img/ef62608e4b4eb0f455c394dc776a32e2bd1968ffcb06908e0a28b6312d1bc926.jpg',
         description: 'Visit the iconic Opera House and beautiful beaches.',
         price: '$2099',
         liked: false
@@ -80,7 +80,7 @@ const destinations = [
     {
         id: 10,
         name: 'Rio de Janeiro',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+        image: 'https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=620,height=400,dpr=2/tour_img/8c4cca1038aa2412b3b4973fa01d8ad5eb0e59c44a193bb0ec1df2ebaf6aa27a.jpg',
         description: 'Enjoy the vibrant city and famous beaches of Brazil.',
         price: '$2199',
         liked: false
