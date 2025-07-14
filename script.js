@@ -8,7 +8,7 @@ const destinations = [
     {
         id: 1,
         name: 'Maldives',
-        image: 'https://source.unsplash.com/400x300/?maldives',
+        image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
         description: 'Crystal-clear waters and stunning beaches await you.',
         price: '$1999',
         liked: false
@@ -16,7 +16,7 @@ const destinations = [
     {
         id: 2,
         name: 'Swiss Alps',
-        image: 'https://source.unsplash.com/400x300/?swiss,alps',
+        image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
         description: 'Breathtaking mountain views and snowy adventures.',
         price: '$2499',
         liked: false
@@ -24,7 +24,7 @@ const destinations = [
     {
         id: 3,
         name: 'New York',
-        image: 'https://source.unsplash.com/400x300/?new,york',
+        image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
         description: 'The city that never sleeps is ready to amaze you.',
         price: '$1799',
         liked: false
@@ -32,7 +32,7 @@ const destinations = [
     {
         id: 4,
         name: 'Tokyo',
-        image: 'https://source.unsplash.com/400x300/?tokyo',
+        image: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=400&q=80',
         description: 'Experience the perfect blend of tradition and modernity.',
         price: '$2299',
         liked: false
@@ -40,7 +40,7 @@ const destinations = [
     {
         id: 5,
         name: 'Paris',
-        image: 'https://source.unsplash.com/400x300/?paris',
+        image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80',
         description: 'Romance, art, and culture in the City of Light.',
         price: '$1999',
         liked: false
@@ -48,13 +48,43 @@ const destinations = [
     {
         id: 6,
         name: 'Bali',
-        image: 'https://source.unsplash.com/400x300/?bali',
+        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80',
         description: 'Tropical paradise with rich culture and beauty.',
         price: '$1599',
         liked: false
+    },
+    {
+        id: 7,
+        name: 'Santorini',
+        image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=80',
+        description: 'Famous for its white-washed houses and blue domes.',
+        price: '$1899',
+        liked: false
+    },
+    {
+        id: 8,
+        name: 'Sydney',
+        image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d4?auto=format&fit=crop&w=400&q=80',
+        description: 'Visit the iconic Opera House and beautiful beaches.',
+        price: '$2099',
+        liked: false
+    },
+    {
+        id: 9,
+        name: 'Cairo',
+        image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80',
+        description: 'Explore the ancient pyramids and Egyptian culture.',
+        price: '$1699',
+        liked: false
+    },
+    {
+        id: 10,
+        name: 'Rio de Janeiro',
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+        description: 'Enjoy the vibrant city and famous beaches of Brazil.',
+        price: '$2199',
+        liked: false
     }
-
-    
 ];
 
 // Render destinations
