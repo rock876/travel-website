@@ -64,7 +64,7 @@ const destinations = [
     {
         id: 8,
         name: 'Sydney',
-        image: 'https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=620,height=400,dpr=2/tour_img/ef62608e4b4eb0f455c394dc776a32e2bd1968ffcb06908e0a28b6312d1bc926.jpg',
+        image: 'https://tse3.mm.bing.net/th/id/OIP.adG5Z7pDMLFs_kZ5k0Te9QHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
         description: 'Visit the iconic Opera House and beautiful beaches.',
         price: '$2099',
         liked: false
@@ -80,7 +80,7 @@ const destinations = [
     {
         id: 10,
         name: 'Rio de Janeiro',
-        image: 'https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=620,height=400,dpr=2/tour_img/8c4cca1038aa2412b3b4973fa01d8ad5eb0e59c44a193bb0ec1df2ebaf6aa27a.jpg',
+        image: 'https://a.cdn-hotels.com/gdcs/production143/d357/42fb6908-dcd5-4edb-9f8c-76208494af80.jpg',
         description: 'Enjoy the vibrant city and famous beaches of Brazil.',
         price: '$2199',
         liked: false
@@ -116,8 +116,17 @@ function toggleLike(id) {
 }
 
 // Book Now functionality
+// Booking modal logic
 function bookNow(destination) {
-    alert(`Thank you for your interest in ${destination}! A travel agent will contact you soon.`);
+    document.getElementById('booking-modal').style.display = 'flex';
+    document.getElementById('modal-destination').textContent = destination;
+    document.getElementById('booking-destination').value = destination;
+    document.getElementById('booking-form').style.display = 'block';
+    document.getElementById('booking-success').style.display = 'none';
+}
+
+function closeBookingModal() {
+    document.getElementById('booking-modal').style.display = 'none';
 }
 
 // Search functionality
@@ -154,4 +163,43 @@ document.addEventListener('DOMContentLoaded', () => {
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', subscribeNewsletter);
     }
+
+    // Booking form submission
+    const bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            bookingForm.style.display = 'none';
+            document.getElementById('booking-success').style.display = 'block';
+            setTimeout(closeBookingModal, 2000);
+        });
+    }
+
+    // Theme toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        if (isDark) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Close modal on outside click
+    document.getElementById('booking-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeBookingModal();
+    });
 });

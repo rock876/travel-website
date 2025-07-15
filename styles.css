@@ -1,9 +1,79 @@
+/* Booking Modal Styles */
+.booking-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: var(--card-bg);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  position: relative;
+  min-width: 320px;
+  max-width: 90vw;
+  color: var(--text-color);
+  animation: fadeInUp 0.4s;
+}
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+.form-group input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.booking-success {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+}
+
 :root {
   --primary-color: #4f46e5;
   --secondary-color: #3b82f6;
   --text-color: #1f2937;
   --bg-color: #f9fafb;
   --white: #ffffff;
+  --card-bg: #fff;
+  --footer-bg: #fff;
+}
+
+body.dark {
+  --primary-color: #6366f1;
+  --secondary-color: #818cf8;
+  --text-color: #f3f4f6;
+  --bg-color: #18181b;
+  --white: #23232b;
+  --card-bg: #23232b;
+  --footer-bg: #18181b;
 }
 
 * {
@@ -16,6 +86,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
 }
 
 header {
@@ -29,6 +100,20 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.theme-toggle:hover {
+  color: var(--secondary-color);
+}
 }
 
 .logo {
@@ -60,7 +145,7 @@ nav a:hover {
   align-items: center;
   text-align: center;
   padding: 8rem 2rem 4rem;
-  background: url('https://source.unsplash.com/1600x900/?travel') center/cover;
+  background: url('https://tse4.mm.bing.net/th/id/OIP.V52qngEz4mNVmAc6eHqg7QHaEx?w=499&h=322&rs=1&pid=ImgDetMain&o=7&rm=3') center/cover;
   color: white;
   min-height: 100vh;
   position: relative;
@@ -135,12 +220,13 @@ nav a:hover {
   padding: 3rem 2rem;
 }
 
+
 .card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s, background 0.3s;
   position: relative;
 }
 
@@ -195,10 +281,11 @@ nav a:hover {
 footer {
   text-align: center;
   padding: 2rem;
-  background: var(--white);
+  background: var(--footer-bg);
   font-size: 0.9rem;
   color: #6b7280;
   margin-top: 2rem;
+  transition: background 0.3s;
 }
 
 .newsletter {

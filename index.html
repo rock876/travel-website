@@ -10,12 +10,14 @@
 <body>
   <header>
     <div class="logo">ExploreNow</div>
+    <button class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
       <ul id="nav-links">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#destinations">Destinations</a></li>
         <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="subscribe.html">Subscribe</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -36,15 +38,39 @@
 
   <section id="destinations" class="destinations">
     <!-- Destinations will be dynamically loaded here -->
+</section>
+
+<!-- Booking Modal -->
+<div id="booking-modal" class="booking-modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+    <h2>Book Your Trip to <span id="modal-destination"></span></h2>
+    <form id="booking-form">
+      <input type="hidden" id="booking-destination" name="destination">
+      <div class="form-group">
+        <label for="booking-name">Name:</label>
+        <input type="text" id="booking-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="booking-email">Email:</label>
+        <input type="email" id="booking-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="booking-dates">Travel Dates:</label>
+        <input type="text" id="booking-dates" name="dates" placeholder="e.g. 2025-08-01 to 2025-08-10" required>
+      </div>
+      <button type="submit" class="btn">Confirm Booking</button>
+    </form>
+    <div id="booking-success" class="booking-success" style="display:none;">
+      <p>Thank you for booking! We will contact you soon.</p>
+    </div>
+  </div>
   </section>
 
   <section id="newsletter" class="newsletter">
     <h2>Subscribe to Our Newsletter</h2>
     <p>Get the latest travel deals and updates directly in your inbox!</p>
-    <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit" class="btn">Subscribe</button>
-    </form>
+    <a href="subscribe.html" class="btn" style="margin-top:1rem;display:inline-block;">Go to Subscription Page</a>
   </section>
 
   <footer id="contact">
